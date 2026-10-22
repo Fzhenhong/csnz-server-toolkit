@@ -1,0 +1,48 @@
+# ---- 运行时产生的文件（含敏感信息，绝不入库）----
+config.json
+credential.bin
+*.db3
+*.db3.backup*
+*.log
+*.mdmp
+auth_events.db3
+
+# 备份目录
+backups/
+logs/
+ExecutedHistory/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ---- 打包产物 ----
+*.exe
+*.spec
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 服务端数据（体积大且涉密）----
+Data/
+CSNZ_Server.exe
+UserDatabase*.db3
+Shop.json
+ServerConfig.json
+ItemBox.json
+ItemRewards.json
+launcher.ini

@@ -1,0 +1,22 @@
+{
+  "server_root": "..",
+  "listen_host": "0.0.0.0",
+  "listen_port": 38120,
+  "api_key": "CHANGE_ME_TO_A_LONG_RANDOM_STRING",
+  "use_https": false,
+  "cert_file": "",
+  "key_file": "",
+  "max_registrations_per_ip": 3,
+  "allow_multi_login": false,
+  "rate_limit": {
+    "max_fails": 5,
+    "window_seconds": 600,
+    "cooldown_seconds": 600
+  },
+  "event_keep_days": 30,
+  "auto_ban": {
+    "enabled": true,
+    "threshold": 30,
+    "_comment": "共享IP(网吧/学校)建议调到100以上，永久封禁无自动解封"
+  }
+}

@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  syntax:
+    name: Python ${{ matrix.python }}
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        python: ["3.9", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: 语法编译检查
+        run: python -m compileall -q gm-tool auth-server
+
+      - name: 安装鉴权服务依赖
+        run: pip install -r auth-server/requirements.txt
+
+      - name: 核心逻辑自检
+        run: python scripts/selftest.py
